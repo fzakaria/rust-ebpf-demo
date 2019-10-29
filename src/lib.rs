@@ -16,7 +16,7 @@ use std::os::raw::{c_int, c_char};
 /// (aside from the helpers).
 ///
 #[inline(always)]
-fn bpf_trace_printk_helper(msg: &str) -> i32 {
+fn bpf_trace_printk(msg: &str) -> i32 {
     // Unfortunately, at the moment this does not support
     // variadic printk
     let printk : fn(*const c_char, c_int) -> c_int = unsafe {
@@ -38,6 +38,6 @@ pub const LICENSE: *const c_char = "GPL\0".as_ptr() as *const c_char;
 // LLVM ERROR: 'hello_world' label emitted multiple times to assembly file
 // https://patchwork.ozlabs.org/patch/808209/
 pub extern "C" fn hello_world_filter(_ctx: *mut u8) -> i32 {
-    bpf_trace_printk_helper("hello world!\n");
+    bpf_trace_printk("hello world!\n");
     return 0;
 }
