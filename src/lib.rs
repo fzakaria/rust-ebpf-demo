@@ -29,7 +29,7 @@ fn bpf_trace_printk_helper(msg: &str) -> i32 {
 
 #[link_section = "license"]
 /// str/String in rust are not null terminated, we have to put one in manually
-pub const LICENSE: *const c_char = "my string\0".as_ptr() as *const c_char;
+pub const LICENSE: *const c_char = "GPL\0".as_ptr() as *const c_char;
 
 
 #[no_mangle]
