@@ -1,7 +1,7 @@
 # Rust eBPF Hello World
 
 This is a **minimal** example of how to write an eBPF filter in rust **natively**.
-This "hello-world" draws on a lot of inspiration from (this blog post)[http://unhandledexpression.com/general/rust/2018/02/02/poc-compiling-to-ebpf-from-rust.html] however I found the need to use gobpf
+This "hello-world" draws on a lot of inspiration from [this blog post](http://unhandledexpression.com/general/rust/2018/02/02/poc-compiling-to-ebpf-from-rust.html) however I found the need to use gobpf
 unecessary.
 
 > The blog uses gobpf simply from what I can surmise to leverage gobpf ability to load ebpf programs
