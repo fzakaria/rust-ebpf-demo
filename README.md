@@ -20,3 +20,14 @@ cargo rustc --release -- --emit=llvm-bc
 cp target/release/deps/rust_ebpf_demo-*.bc rust_ebpf_demo.bc
 llc rust_ebpf_demo.bc -march=bpf -filetype=obj -o rust_ebpf_demo.o
 ```
+
+## Testing
+
+In order to see the test you have to make sure you have the trace pipe enabled.
+
+```bash
+echo 1 > /sys/kernel/debug/tracing/tracing_on
+
+# Once enabled you can do:
+sudo cat /sys/kernel/debug/tracing/trace_pipe 
+```
